@@ -1,26 +1,79 @@
-import React from 'react'
-import './Hero.css'
-import Speech from './Speech'
+import React from "react";
+import "./Hero.css";
+import Speech from "./Speech";
+import { motion } from "motion/react";
+import { animate, stagger } from "motion";
+
+const awardVariant = {
+  initial: {
+    X: -100,
+    opacity: 0,
+  },
+  animate: {
+    X: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const followVariant = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 const Hero = () => {
   return (
-    <div className='hero'>
+    <div className="hero">
       <div className="hSection left">
         {/* Title  */}
-        <h1 className="hTitle">Hey There,<br/><span>I'm Ravi!</span></h1>
+        <motion.h1
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="hTitle"
+        >
+          Hey There,
+          <br />
+          <span>I'm Ravi!</span>
+        </motion.h1>
         {/* Awards  */}
-        <div className="awards">
-          <h2>Top Rated Designer</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-          <div className="awardList">
-            <img src="/award1.png" alt="" />
-            <img src="/award2.png" alt="" />
-            <img src="/award3.png" alt="" />
-          </div>
-        </div>
+        <motion.div
+          variants={awardVariant}
+          initial="initial"
+          animate="animate"
+          className="awards"
+        >
+          <motion.h2 variants={awardVariant}>Top Rated Designer</motion.h2>
+          <motion.p variants={awardVariant}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+          </motion.p>
+          <motion.div variants={awardVariant} className="awardList">
+            <motion.img variants={awardVariant} src="/award1.png" alt="" />
+            <motion.img variants={awardVariant} src="/award2.png" alt="" />
+            <motion.img variants={awardVariant} src="/award3.png" alt="" />
+          </motion.div>
+        </motion.div>
         {/* Scroll SVG  */}
-        <a href="#services" className='scroll'>
-        <svg
+        <motion.a
+          animate={{ y: [0, 5], opacity: [0, 1, 0] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          href="#services"
+          className="scroll"
+        >
+          <svg
             width="50px"
             height="50px"
             viewBox="0 0 24 24"
@@ -32,46 +85,66 @@ const Hero = () => {
               stroke="white"
               strokeWidth="1"
             />
-            <path
-               d="M12 5V8"
-               stroke="white"
-               strokeWidth="1"
-               strokeLinecap="round"
-             />
-        </svg>
-        </a>
+            <motion.path
+              animate={{ y: [0, 5] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              d="M12 5V8"
+              stroke="white"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
+          </svg>
+        </motion.a>
       </div>
       <div className="hSection right">
         {/* Follow  */}
-        <div className="follow">
-          <a href="/">
-          <img src="/instagram.png" alt="" />
-          </a>
-          <a href="/">
-          <img src="/facebook.png" alt="" />
-          </a>
-          <a href="/">
-          <img src="/youtube.png" alt="" />
-          </a>
-          <div className="followTextContainer">
+        <motion.div
+          variants={followVariant}
+          initial="initial"
+          animate="animate"
+          className="follow"
+        >
+          <motion.a variants={followVariant} href="/">
+            <img src="/instagram.png" alt="" />
+          </motion.a>
+          <motion.a variants={followVariant} href="/">
+            <img src="/facebook.png" alt="" />
+          </motion.a>
+          <motion.a variants={followVariant} href="/">
+            <img src="/youtube.png" alt="" />
+          </motion.a>
+          <motion.div variants={followVariant} className="followTextContainer">
             <div className="followText">FOLLOW ME</div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {/* Bubble  */}
         <Speech />
         {/* Certificate  */}
-        <div className="certificate">
+        <motion.div
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 1 }}
+          className="certificate"
+        >
           <img src="/certificate.png" alt="" />
           LMA CERTIFIED
           <br />
           PROFESSIONAL
           <br />
           UI DESIGNER
-        </div>
+        </motion.div>
         {/* Contact Button  */}
-        <a href="/#contact" className='contactLink'>
-          <div className="contactButton">
-          <svg viewBox="0 0 200 200" width="150" height="150">
+        <motion.a
+          animate={{ x: [200, 0], opacity: [0, 1] }}
+          transition={{ duration: 2 }}
+          href="/#contact"
+          className="contactLink"
+        >
+          <motion.div
+            className="contactButton"
+            animate={{ rotate: [0, 360] }}
+            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+          >
+            <svg viewBox="0 0 200 200" width="150" height="150">
               <circle cx="100" cy="100" r="90" fill="pink" />
               <path
                 id="innerCirclePath"
@@ -101,11 +174,17 @@ const Hero = () => {
                 <polyline points="9 6 18 6 18 15" />
               </svg>
             </div>
-          </div>
-        </a>
+          </motion.div>
+        </motion.a>
+      </div>
+      <div className="bg">
+        {/* 3D */}
+        <div className="hImg">
+          <img src="/hero.png" alt="" />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
