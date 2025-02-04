@@ -3,6 +3,9 @@ import "./Hero.css";
 import Speech from "./Speech";
 import { motion } from "motion/react";
 import { animate, stagger } from "motion";
+import { Canvas } from "@react-three/fiber";
+import Shape from "./Shape";
+import { Suspense } from "react";
 
 const awardVariant = {
   initial: {
@@ -179,6 +182,11 @@ const Hero = () => {
       </div>
       <div className="bg">
         {/* 3D */}
+        <Canvas>
+          <Suspense fallback="loading...">
+            <Shape />
+          </Suspense>
+        </Canvas>
         <div className="hImg">
           <img src="/hero.png" alt="" />
         </div>
