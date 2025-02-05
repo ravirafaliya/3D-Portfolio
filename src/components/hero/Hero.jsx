@@ -59,9 +59,9 @@ const Hero = () => {
           animate="animate"
           className="awards"
         >
-          <motion.h2 variants={awardVariant}>Top Rated Designer</motion.h2>
+          <motion.h2 variants={awardVariant}>FrontEnd Web Developer</motion.h2>
           <motion.p variants={awardVariant}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+          Creative Frontend Developer crafting sleek, responsive, and user-friendly websites.
           </motion.p>
           <motion.div variants={awardVariant} className="awardList">
             <motion.img variants={awardVariant} src="/award1.png" alt="" />
@@ -107,14 +107,14 @@ const Hero = () => {
           animate="animate"
           className="follow"
         >
-          <motion.a variants={followVariant} href="/">
-            <img src="/instagram.png" alt="" />
+          <motion.a variants={followVariant} href="https://www.instagram.com/ravi__6997/" target="_blank">
+            <img src="/instagram.png" alt="Instagram" />
           </motion.a>
-          <motion.a variants={followVariant} href="/">
-            <img src="/facebook.png" alt="" />
+          <motion.a variants={followVariant} href="https://www.facebook.com/RAVI.M.RAFALIYA?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank">
+            <img src="/facebook.png" alt="facebook" />
           </motion.a>
-          <motion.a variants={followVariant} href="/">
-            <img src="/youtube.png" alt="" />
+          <motion.a variants={followVariant} href="https://www.linkedin.com/in/ravi-rafaliya-6a931a167/" target="_blank">
+            <img src="/linkedin.png" alt="LinkedIn" />
           </motion.a>
           <motion.div variants={followVariant} className="followTextContainer">
             <div className="followText">FOLLOW ME</div>

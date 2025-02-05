@@ -14,13 +14,13 @@ const Speech = () => {
           sequence={[
             1000, // wait 1s before typing out the first string
             // Same substring at the start will only be typed out once, initially
-            "lorem10    ipsum10    dolor10    sit10    amet10    consectetur10    adipisicing10    elit10",
+            "Crafting sleek, responsive, and user-friendly web experiences.",
             1000, // wait 1s before replacing "Mice" with "Hamsters"
-            "We produce food for Hamsters",
+            "Expert in HTML, CSS, JavaScript, and modern frameworks.",
             1000,
-            "We produce food for Guinea Pigs",
+            "Transforming ideas into interactive, pixel-perfect designs.",
             1000,
-            "We produce food for Chinchillas",
+            "Committed to delivering high-performance and visually stunning websites.",
             1000,
           ]}
           wrapper="span"
