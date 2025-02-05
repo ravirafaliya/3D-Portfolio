@@ -2,8 +2,8 @@
 
 Welcome to my personal portfolio website! This project showcases my skills, projects, and experiences in a visually appealing and interactive way. Built using modern web technologies, the website is designed to provide a seamless and engaging user experience.
 
-Technologies Used
-ReactJS: A JavaScript library for building user interfaces.
+## Technologies Used
+### ReactJS:  A JavaScript library for building user interfaces.
 
 Vite: A fast build tool that significantly improves the development experience.
 
