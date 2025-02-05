@@ -61,7 +61,7 @@ const services = [
 ];
 
 const Services = () => {
-  const [currentServiceId, setCurrentServiceId] = useState(2);
+  const [currentServiceId, setCurrentServiceId] = useState(1);
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-200px" });
   return (
