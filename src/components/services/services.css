@@ -93,17 +93,7 @@
 }
 
 @media (max-width: 1920px) {
-  .sTitle {
-    font-size: 68px;
-  }
-
-  .service {
-    width: 60%;
-  }
-
-  .counterList {
-    width: 60%;
-  }
+  
 }
 
 @media (max-width: 1536px) {
