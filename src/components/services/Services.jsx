@@ -102,7 +102,7 @@ const Services = () => {
         </div>
       </div>
       <div className="sSection right">
-      {currentServiceId === 1 ? (
+        {currentServiceId === 1 ? (
           <ComputerModelContainer />
         ) : currentServiceId === 2 ? (
           <MugModelContainer />

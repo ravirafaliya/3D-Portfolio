@@ -56,7 +56,7 @@ const contact = () => {
     <div className="contact" ref={ref} onSubmit={sendEmail}>
       <div className="cSection">
         <motion.form
-        ref={form}
+          ref={form}
           variants={listVariant}
           animate={isInView ? "animate" : "initial"}
         >
