@@ -108,14 +108,6 @@ const Portfolio = () => {
   const [containerDistance, setContainerDistance] = useState(0);
   const ref = useRef(null);
 
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     const rect = ref.current.getBoundingClientRect();
-  //     setContainerDistance(rect.left);
-  //   }
-  // }, []);
-
-  // FIX: Re-calculate when screen size changes
   useEffect(() => {
     const calculateDistance = () => {
       if (ref.current) {
@@ -148,7 +140,6 @@ const Portfolio = () => {
           className="empty"
           style={{
             width: window.innerWidth - containerDistance,
-            // backgroundColor: "pink",
           }}
         />
         {items.map((item) => (
