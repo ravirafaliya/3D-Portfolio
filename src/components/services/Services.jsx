@@ -1,10 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Services.css";
 import ComputerModelContainer from "./computer/ComputerModelContainer";
 import { title } from "motion/react-client";
 import Counter from "./counter";
 import { motion } from "motion/react";
-import { useInView } from "react-intersection-observer";
+import { useInView } from "motion/react";
+import ConsoleModelContainer from "./console/ConsoleModelContainer";
+import MugModelContainer from "./mug/MugModelContainer";
 
 const textVariants = {
   initial: {
@@ -59,22 +61,31 @@ const services = [
 ];
 
 const Services = () => {
+  const [currentServiceId, setCurrentServiceId] = useState(2);
   const ref = useRef();
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { margin: "-200px" });
   return (
     <div className="services" ref={ref}>
       <div className="sSection left">
         <motion.h1
           variants={textVariants}
-          initial="initial"
-          animate="animate"
+          animate={isInView ? "animate" : "initial"}
           className="sTitle"
         >
           How do I help?
         </motion.h1>
-        <div className="serviceList">
+        <motion.div
+          variants={listVariants}
+          animate={isInView ? "animate" : "initial"}
+          className="serviceList"
+        >
           {services.map((service) => (
-            <div className="service" key={service.id}>
+            <motion.div
+              variants={listVariants}
+              className="service"
+              key={service.id}
+              onClick={() => setCurrentServiceId(service.id)}
+            >
               <div className="serviceIcon">
                 <img src={service.img} alt="" />
               </div>
@@ -82,15 +93,23 @@ const Services = () => {
                 <h2>{service.title}</h2>
                 <h3>{service.Counter} Projects</h3>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className="counterList">
           <Counter from={0} to={104} text="Projects Completed" />
           <Counter from={0} to={72} text="Happy Clients" />
         </div>
       </div>
-      <div className="sSection right"><ComputerModelContainer /></div>
+      <div className="sSection right">
+      {currentServiceId === 1 ? (
+          <ComputerModelContainer />
+        ) : currentServiceId === 2 ? (
+          <MugModelContainer />
+        ) : (
+          <ConsoleModelContainer />
+        )}
+      </div>
     </div>
   );
 };
