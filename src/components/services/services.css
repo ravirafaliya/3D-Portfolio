@@ -92,8 +92,7 @@
   font-weight: 300;
 }
 
-@media (max-width: 1920px) {
-}
+
 
 @media (max-width: 1536px) {
   .service {
@@ -102,6 +101,7 @@
 
   .counterList {
     width: 70%;
+    padding: 0 30px;
   }
 }
 
@@ -111,6 +111,10 @@
   }
 
   .service {
+    width: 100%;
+  }
+
+  .counterList {
     width: 100%;
   }
 }
@@ -139,5 +143,9 @@
 
   .sSection.right {
     display: none;
+  }
+
+  .counterList{
+    width: 70%;
   }
 }
