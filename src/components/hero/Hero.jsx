@@ -2,7 +2,6 @@ import React from "react";
 import "./Hero.css";
 import Speech from "./Speech";
 import { motion } from "motion/react";
-import { animate, stagger } from "motion";
 import { Canvas } from "@react-three/fiber";
 import Shape from "./Shape";
 import { Suspense } from "react";
@@ -64,9 +63,9 @@ const Hero = () => {
           Creative Frontend Developer crafting sleek, responsive, and user-friendly websites.
           </motion.p>
           <motion.div variants={awardVariant} className="awardList">
-            <motion.img variants={awardVariant} src="/award1.png" alt="" />
-            <motion.img variants={awardVariant} src="/award2.png" alt="" />
-            <motion.img variants={awardVariant} src="/award3.png" alt="" />
+            <motion.img variants={awardVariant} src="/figma.png" alt="Figma Logo" />
+            <motion.img variants={awardVariant} src="/react.png" alt="React logo" />
+            <motion.img variants={awardVariant} src="/github.png" alt="Github Logo" />
           </motion.div>
         </motion.div>
         {/* Scroll SVG  */}
@@ -188,7 +187,7 @@ const Hero = () => {
           </Suspense>
         </Canvas>
         <div className="hImg">
-          <img src="/hero.png" alt="" />
+          <img src="/heroRr.png" alt="Hero image" />
         </div>
       </div>
     </div>
