@@ -1,7 +1,7 @@
 import Hero from "./components/hero/Hero";
 import Services from "./components/services/Services";
 import Portfolio from "./components/portfolio/Portfolio";
-// import Contact from "./components/contact/Contact";
+import Contact from "./components/contact/Contact";
 
 
 
@@ -25,7 +25,7 @@ const App = () => {
       </section>
       <Portfolio />
       <section id="contact">
-        {/* <Contact /> */}
+        <Contact />
       </section>
       
 
