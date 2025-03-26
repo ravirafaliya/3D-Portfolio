@@ -4,6 +4,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/contact";
 
 
+
 // import { lazy, Suspense } from "react";
 // import LazyLoad from "react-lazyload";
 
