@@ -19,7 +19,7 @@ const listVariant = {
   },
 };
 
-const contact = () => {
+const Contact = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
@@ -101,4 +101,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
